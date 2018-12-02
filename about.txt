@@ -1,0 +1,3 @@
+My name is Denis Sinkevich. This is my final project at frontend's course.
+
+Good luck for me!
