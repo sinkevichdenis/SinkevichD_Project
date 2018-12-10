@@ -1,0 +1,14 @@
+
+==========================================================
+version 1.1.0
+
+* add config/paths.json
+* add config/resourceRoutes.json
+* made possibility build normal dist
+    add resources copy for build dist
+
+==========================================================
+version 1.0.0
+
+* add common gulp script
+* add simple samples for pug and sass etc.

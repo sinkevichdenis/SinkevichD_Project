@@ -1,0 +1,17 @@
+{
+    "dist": "./dist",
+    "temp": "./temp",
+    "watch": {
+        "pug": ["./src/pug/**/*.pug", "./data/**/*.json"],
+        "sass": ["./src/style/**/*.sass", "./src/style/**/*.scss"]
+    },
+    "src": {
+        "pug": ["./src/pug/**/[^_]*.pug"],
+        "sass": ["./src/style/**/[^_]*.sass", "./src/style/**/[^_]*.scss"]
+    },
+    "to": {
+        "html": "./",
+        "style": "./style"
+    },
+    "data": "./data/main.json"
+}
