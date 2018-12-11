@@ -1,0 +1,135 @@
+$heightHeader: 314px
+$heightBlockMenu: 60px
+$headerBackColor: #ffffff
+$colorPlaceholder: #a8aeae
+$colorMain: #242929
+$colorFocus: #ffc908
+$margin: 0 20px
+
+$sizeButton: 50px
+$colorMenuLinks: white
+
+@mixin menuSize
+	max-width: 1100px
+	width: 100%
+
+.header
+	$this: &
+	width: 100%
+	min-width: 1000px
+	height: $heightHeader
+
+	box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1)
+	background-color: $headerBackColor
+	
+	display: flex
+	flex-direction: column
+	align-items: center
+	
+	&_line
+		width: 100%
+		height: 1px
+
+		border-top: 1px solid lighten($colorMain, 75%)
+		border-bottom: 1px solid lighten($colorMain, 75%)
+
+	&_container	
+		&-logo, &-menu
+			@include menuSize
+
+			display: flex
+			justify-content: space-between
+			align-items: center
+		
+		&-logo
+			height: $heightHeader - $heightBlockMenu
+
+		&-menu
+			height: $heightBlockMenu
+
+	&_search
+		display: flex
+		align-items: bottom
+		margin: $margin
+
+		input 
+			width: 125px
+			height: 13px
+			box-sizing: border-box
+			
+			::-webkit-input-placeholder
+				color: $colorPlaceholder
+			:-moz-placeholder
+				color: $colorPlaceholder
+			:-ms-input-placeholder
+				color: $colorPlaceholder
+			
+			font-family: "Merriweather - Light Italic"
+			font-size: 14px
+			font-weight: 400
+			
+			border: 0
+			margin: 0 3px
+
+	&_subscribe
+		width: 153px
+		height: 40px
+		margin: $margin
+
+		text-align: center
+		transition: .2s
+
+		border-radius: 2px
+		border: 1px solid lighten($colorMain, 75%)
+
+		& span
+			font-family: "Dosis - Semi Bold"
+			font-size: 14px
+			font-weight: bold
+			
+			line-height: 40px
+			text-transform: uppercase
+			letter-spacing: 2.8px
+
+		&:hover
+			font-weight: 800
+			border: 1px solid $colorMain
+			cursor: pointer
+
+		&:active
+			background-color: lighten($colorMain, 75%) 
+	&_menu
+		&-links, &-icons
+			display: flex
+			justify-content: space-between
+			align-items: center
+			box-sizing: border-box
+			margin: $margin
+
+		&-links
+			max-width: 760px
+			width: 100%
+			height: 11px
+			line-height: 30px
+
+		&-icons
+			max-width: 190px
+			width: 100%
+
+		&-icons #{$this}_icon img:hover
+			width: 140%
+
+	&_link 		
+		text-decoration: none
+		text-transform: uppercase
+
+		color: $colorMain
+		font-family: "Myriad Pro - Semibold"
+		font-size: 16px
+		font-weight: bold
+		letter-spacing: 1.6px
+		transition: 0.1s
+
+		&:hover
+			color: $colorFocus
+
