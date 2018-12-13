@@ -1,0 +1,41 @@
+//var to all page
+$widthBody: 1900px
+$backImageImage: "/assets/page_backgroud2.png"
+$shadowBlocks: 0 10px 24px rgba(0, 0, 0, 0.1)
+
+$colorPlaceholder: #a8aeae
+$colorFontMain: #242929
+$colorFontFocus: #ffc908
+
+//var to Header_Menu
+$heightHeader: 314px
+$heightBlockMenu: 60px
+$widthMaxHeader: 1100px
+
+$backColorHeader: #ffffff
+$marginHeader: 0 20px
+
+//var to SliderTop
+$maxHeightSlider: 900px
+$minHeightSlider: 470px
+$maxWidthSlider: 1900px
+$minWidthSlider: 1000px
+
+
+
+body
+	padding: 0
+	margin: 0
+
+	display: flex
+	justify-content: center
+	
+	background-image: url($backImageImage)
+
+	
+	.#{&}__container
+		max-width: $widthBody
+		box-shadow: 0 0 20px rgba(0,0,0,0.7)
+
+a
+	text-decoration: none

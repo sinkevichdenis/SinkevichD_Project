@@ -72,6 +72,11 @@ gulp.task('build', gulp.series('clien:dist', 'compile-pug:dist', 'compile-sass:d
 gulp.task('dev:comppile', gulp.parallel('compile-pug:temp', 'compile-sass:temp'));
 
 gulp.task('dev', gulp.series('clien:temp', 'dev:comppile', 'browser:run:temp', function watch() {
+    var resourcePaths = resourceRoutes.serveStatic.map(function (item) {
+        return item.dir;
+    });
+
+    gulp.watch(resourcePaths, gulp.series('browser:reload'));
     gulp.watch(config.watch.sass, gulp.series('compile-sass:temp', 'browser:reload'));
     return gulp.watch(config.watch.pug, gulp.series('compile-pug:temp', 'browser:reload'));
 }));

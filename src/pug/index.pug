@@ -1,4 +1,7 @@
-extend ./_template.pug
+extend ./component/_template.pug
+include ./component/_header.pug
+include ./component/_sliderTop.pug
+
 
 block body
-	include ./component/_header.pug
+	+header_create()

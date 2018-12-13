@@ -1,0 +1,26 @@
+mixin sliderTop_create()
+
+	mixin slideImage(number)
+		- var numbers = 1
+		while numbers <= number
+			img(src="/assets/slider_" + numbers + 
+				".png").sliderTop_image
+			- numbers++
+
+	mixin slideTitle(title, content)
+		.sliderTop_title-top= title
+		.sliderTop_title-down= content
+
+
+	.sliderTop_images
+		+slideImage(3)
+		.sliderTop_shadow
+
+	.sliderTop_container
+		.sliderTop_title
+			+ slideTitle(sliderTop_title.main,sliderTop_title.additional)
+		.sliderTop_content
+
+	script(src="/js/component/_sliderTop.js")
+
+

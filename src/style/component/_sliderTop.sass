@@ -1,0 +1,69 @@
+
+
+.sliderTop
+	display: flex
+	justify-content: center
+	position: relative
+
+
+	&_images
+		box-sizing: border-box
+		max-height: $maxHeightSlider
+		min-height: $minHeightSlider
+		max-width: $maxWidthSlider
+		min-width: $minWidthSlider
+		overflow: hidden
+
+		z-index: 0
+		
+		@media (max-width: $maxWidthSlider)
+			height: 47vw
+	&_image
+		width: 100%
+
+	&_shadow
+		top: -400px
+		left: 0
+		width: 0
+		height: 0	
+
+		position: absolute 
+
+		border-bottom: 0 solid rgba(0, 0, 0, 0.6)
+		border-left: 0 solid transparent
+		border-right: 0 solid transparent
+
+	&_container
+		position: absolute
+
+
+	&_title
+		width: 270px
+		height: 50px
+		line-height: 50px
+
+		background-color: red
+		&-top
+			width: 267px
+			height: 25px
+			color: #ffffff
+			font-family: "Bank Gothic BT"
+			font-size: 48px
+			font-weight: 300
+			line-height: 36px
+
+		&-down
+			width: 181px
+			height: 11px
+			color: #ffffff
+			font-family: "Myriad Pro"
+			font-size: 16px
+			font-weight: 700
+			line-height: 15.2px
+			text-transform: uppercase
+
+		
+		
+
+		
+		
