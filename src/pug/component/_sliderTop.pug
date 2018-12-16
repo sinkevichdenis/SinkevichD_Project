@@ -6,20 +6,51 @@ mixin sliderTop_create()
 			img(src="/assets/slider_" + numbers + 
 				".png").sliderTop_image
 			- numbers++
+		img(src="/assets/slider_1.png").sliderTop_image
 
 	mixin slideTitle(title, content)
 		.sliderTop_title-top= title
-		.sliderTop_title-down= content
+		.sliderTop_title-down.style_triangle= content
+
+	mixin slideText(json)
+		for path,index in json
+			if index == 0
+				.sliderTop_layer.style_layer.style_layer__visible
+					.sliderTop_content-big= path.title
+					.sliderTop_content= path.content
+			else
+				.sliderTop_layer.style_layer
+					.sliderTop_content-big= path.title
+					.sliderTop_content= path.content
+	
+	mixin slideDots(number)
+		- var numbers = 1
+		while numbers <= number
+			.sliderTop_dot
+		- numbers++
+
 
 
 	.sliderTop_images
 		+slideImage(3)
 		.sliderTop_shadow
-
-	.sliderTop_container
+	.sliderTop_all-components
 		.sliderTop_title
-			+ slideTitle(sliderTop_title.main,sliderTop_title.additional)
-		.sliderTop_content
+			+ slideTitle(headerTxtJson.title.main,
+					headerTxtJson.title.additional)
+		.sliderTop_container
+			.sliderTop_container-title.sliderTop_title-down= headerTxtJson.contentTitle
+			.sliderTop_buttons
+				.sliderTop_button
+				.sliderTop_button.style_inverse-x
+			.sliderTop_layers.style_layers
+				+slideText(headerTxtJson.content)
+				.sliderTop_details
+					.sliderTop_button.style_button__yellow.style_triangle
+						|explore now
+					.sliderTop_dots
+						+slideDots(3)
+
 
 	script(src="/js/component/_sliderTop.js")
 

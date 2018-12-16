@@ -1,20 +1,25 @@
 {
-	"sliderTop_content":[
-		{
-			"title":"LOST IN SPACE",
-			"content": "Some modern factory robots are autonomous within the strict confines of their direct environment. It may not be that every degree of freedom exists"
-		},
-		{
-			"title":"Something new",
-			"content": "new new new new new new new new new new new new new new new new new new new new new new new new new new new new new new"
-		},
-		{
-			"title":"Another fresh meows",
-			"content": "meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow "
-		}],
-	"sliderTop_title": 
-		{
-			"main": "Travelling",
-			"additional": "SPORTS THAT NEVER ENDS"
-		}
+	"headerTxtJson":
+	{
+		"content":[
+			{
+				"title":"LOST IN SPACE",
+				"content": "Some modern factory robots are autonomous within the strict confines of their direct environment. It may not be that every degree of freedom exists"
+			},
+			{
+				"title":"Something new",
+				"content": "new new new new new new new new new new new new new new new new new new new new new new new new new new new new new new"
+			},
+			{
+				"title":"Another fresh meows",
+				"content": "meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow "
+			}],
+		"contentTitle": "FEATURED BLOG",
+		"title": 
+			{
+				"main": "Travelling",
+				"additional": "SPORTS THAT NEVER ENDS"
+			}
+	}
+
 }
