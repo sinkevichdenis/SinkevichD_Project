@@ -11,8 +11,6 @@
 		min-width: $minWidthSlider
 		overflow: hidden
 
-		z-index: 0
-		
 		@media (max-width: $maxWidthSlider)
 			height: 47vw
 	&_image
@@ -30,10 +28,12 @@
 		border-left: 0 solid transparent
 		border-right: 0 solid transparent
 
-	&_all-components
+	&_not-image-components
 		position: absolute
+
 		width: 95%
 		height: 100%
+
 		margin-right: auto
 		margin-left: auto
 
@@ -52,7 +52,6 @@
 		font-size: 12px
 		text-transform: uppercase
 
-
 		&-top
 			font-family: "Bank Gothic BT"
 			font-size: 3em
@@ -69,10 +68,9 @@
 				top: 20%
 
 	&_container
-		width: 560px 
+		width: 100% 
 		height: 280px
-		max-height: 280px
-		top: 55%
+		top: 65%
 
 		color: $colorFontLight
 		
@@ -80,10 +78,9 @@
 		flex-wrap: wrap
 		position: relative
 
-		@media (max-width: $maxWidthSlider)
-			width: calc(100% - 30vw) 
-			height: 12vw
-		
+		@media (max-width: 1600px)
+			top: 55%
+
 		&-title
 			width: 100%
 			height: 30px
@@ -108,20 +105,17 @@
 
 		margin: 3px
 		position: relative
-		z-index: 1
 
 		&::before
 			content: "^"
 			width: 100%
 			height: 100%
+			text-align: center
 
 			font-size: 30px
 			color: $colorFontLight
 
 			position: absolute
-			left: 10px
-			top: 1px
-			z-index: 2
 			
 		&:active
 			background-color: red
@@ -134,12 +128,14 @@
 				border: 2px solid black
 	
 	&_layers
-		width: calc(100% - 60px)
-		height: calc(100% - 30px)
-		background-color: blue
+		width: 480px
+		height: 250px
 
-		color: $colorFontLight
 		position: relative
+		
+		@media (max-width: 1400px)
+			width: 50%
+			height: 180px
 	
 	&_content-big, &_content
 		width: 100%
@@ -161,20 +157,28 @@
 
 		margin-top: 8px
 
-		font-family: "Myriad Pro"
-		font-size: 14px
+		font-family: "Myriad Pro Light Italic"
+		font-size: 16px
 
 		letter-spacing: -0.15px
 
 	&_details
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+
 		width: 150px
-		height: 90px
+		min-height: 70px
+		max-height: 90px
+		height: 35%
 		
 		position: absolute
 		top: 50%
 
 	&_details &_button 
 		box-sizing: border-box
+		margin: 10px 0
+
 		width: 100%
 		height: 45px
 		line-height: 45px		
@@ -191,18 +195,26 @@
 		
 		&.style_triangle::after
 			@include triangle(5px, black)
-			top: 3px
+			top: 13px
 			left: calc(100% - 13px)
 
 	&_details &_dots
-		width: 100%
-		height: 10px
+		display: flex
+		justify-content: space-between
+		width: 40%
+		height: 15px
 		
 	&_dot
-		width: 8px
-		height: 8px
+		width: 13px
+		height: 13px
+
 		border: 1px solid #ffffff
+		border-radius: 50%
 		background-color: #a59966
+
+		&#{&}__visible
+			background-color: red
+
 
 		
 

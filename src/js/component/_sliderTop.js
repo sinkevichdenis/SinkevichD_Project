@@ -2,10 +2,10 @@
 	var borderWidth;
 	
 	//change shadow's size on the slaider
-	window.addEventListener("resize", sizeShadow);
-	window.addEventListener("load", sizeShadow) ;
+	window.addEventListener("resize", resizeShadow);
+	window.addEventListener("load", resizeShadow) ;
 
-	function sizeShadow ()
+	function resizeShadow ()
 	{
 		borderWidth = document.querySelector(".sliderTop_images");
 		borderWidth = parseInt(getComputedStyle(borderWidth).height);
