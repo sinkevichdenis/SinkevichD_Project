@@ -21,14 +21,14 @@
 
 	&_row
 		width: 100%
-		height: 50px
+		height: 45px
 
 		input[type=text], input[type=email]
 			width: 100%
 			height: 50px
 			line-height: 50px
 
-			padding-left: 40%
+			text-indent: 35%
 
 			border: none
 			border-bottom: 3px solid lighten($colorFontMain, 60%)
@@ -46,30 +46,55 @@
 				:-ms-input-placeholder
 					color: $colorFontFocus
 				
-	&_row.input-checkbox>label
+	&_row.input-checkbox > label
 		display: inline-block
 		width: 80%
-		height: 50px
-		line-height: 50px
+		height: 100%
+		line-height: 45px
 
 		margin: 1% 10%
 		text-align: center
 
-		font-size: 20px
+		font-size: 16px
 		font-family: "Merriweather-Light-Italic"
+
+		& > .checkbox-point::after
+			content: " "
+			display: none
+			box-sizing: border-box
+			position: relative
+
+			width: 65%
+			height: 65%
+
+			top: -7px
+			left: 0
+
+			background-color: lighten($colorFontMain, 60%)
+
+		&:hover input:not(:checked) ~ .checkbox-point::after	
+			display: inline-block
+			background-color: $colorFontFocus
+
+		&:hover input:checked ~ .checkbox-point	
+			border-color: $colorFontFocus
+
+		& input:checked ~ .checkbox-point::after
+			display: inline-block
+			background-color: lighten($colorFontMain, 60%)
 			
-	&_checbox-point
-		display: inline-block
-		position: relative
+	@at-root 
+		.checkbox-point
+			display: inline-block
+			position: relative
 
-		width: 30px
-		height: 30px
+			width: 30px
+			height: 30px
 
-		top: 10px
-		left: 10px
-		
-		border: 2px solid lighten($colorFontMain, 60%)
-
+			top: 10px
+			left: 10px
+			
+			border: 2px solid lighten($colorFontMain, 60%)
 
 	input[type=checkbox] 
 		display: none
@@ -100,6 +125,3 @@
 		
 		&:active
 			background-color: lighten($colorFontMain, 75%) 
-
-
-
