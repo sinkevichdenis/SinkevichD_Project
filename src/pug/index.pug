@@ -1,7 +1,13 @@
 extend ./component/_template.pug
 include ./component/_header.pug
 include ./component/_sliderTop.pug
+include ./component/_map.pug
 
 
 block body
 	+header_create()
+	.main
+		.sidebar
+			+map_create()
+		.content
+	.footer
