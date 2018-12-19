@@ -1,0 +1,231 @@
+.sliderTop
+	display: flex
+	justify-content: center
+	position: relative
+
+	&_images
+		box-sizing: border-box
+		max-height: $maxHeightSlider
+		min-height: $minHeightSlider
+		max-width: $maxWidthSlider
+		min-width: $minWidthSlider
+		overflow: hidden
+
+		@media (max-width: $maxWidthSlider)
+			height: 47.5vw
+	&_image
+		width: 100%
+		height: 100%
+
+	&_shadow
+		top: -400px
+		left: 0
+		width: 0
+		height: 0	
+
+		position: absolute 
+
+		border-bottom: 0 solid rgba(0, 0, 0, 0.6)
+		border-left: 0 solid transparent
+		border-right: 0 solid transparent
+
+	&_not-image-components
+		position: absolute
+
+		width: 95%
+		height: 100%
+
+		margin-right: auto
+		margin-left: auto
+
+	&_title
+		width: 300px
+		height: 70px
+		top: 20%
+
+		position: absolute
+
+		display: flex
+		flex-direction: column
+		align-items: center
+
+		color: $colorFontLight
+		font-size: 12px
+		text-transform: uppercase
+
+		&-top
+			font-family: "Bank Gothic BT"
+			font-size: 3em
+
+		&-down
+			font-family: "Myriad Pro"
+			font-weight: bold 
+			height: 30px
+			position: relative
+
+			&.style_triangle::before
+				@include triangle(5px, red)
+				left: -10%
+				top: 20%
+
+	&_container
+		width: 100% 
+		height: 280px
+		top: 65%
+
+		color: $colorFontLight
+		
+		display: flex
+		flex-wrap: wrap
+		position: relative
+
+		@media (max-width: 1600px)
+			top: 55%
+
+		&-title
+			width: 100%
+			height: 30px
+			margin-left: 10px
+			font-weight: normal
+
+	&_buttons
+		width: 60px
+		height: calc(100% - 30px)
+
+		display: flex
+		flex-direction: column
+		
+		justify-content: flex-start
+
+	&_buttons &_button
+		box-sizing: border-box
+		width: 45px
+		height: 45px
+		background-color: $colorFontMain
+		border: 2px solid $colorFontLight
+
+		margin: 3px
+		position: relative
+
+		&::before
+			content: "^"
+			width: 100%
+			height: 100%
+			text-align: center
+
+			font-size: 30px
+			color: $colorFontLight
+
+			position: absolute
+			
+		&:active
+			background-color: red
+			transition: .1s
+			box-shadow: inset 2px 2px 10px black, inset -2px -2px 10px black
+		
+		&:hover
+			border: 2px solid $colorFontFocus
+			&:active
+				border: 2px solid black
+	
+	&_layers
+		width: 480px
+		height: 250px
+
+		position: relative
+		
+		@media (max-width: 1400px)
+			width: 50%
+			height: 180px
+	
+	&_content-big, &_content
+		width: 100%
+
+	&_content-big
+		height: 44px
+		line-height: 44px
+		
+		font-family: "Zurich BT - Black Extended"
+		font-size: 44px
+		font-weight: 400
+
+		text-transform: uppercase
+		letter-spacing: -1.32px
+
+	&_content		
+		height: 50px
+		line-height: 19px
+
+		margin-top: 8px
+
+		font-family: "Myriad Pro Light Italic"
+		font-size: 16px
+
+		letter-spacing: -0.15px
+
+	&_details
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+
+		width: 150px
+		min-height: 70px
+		max-height: 90px
+		height: 35%
+		
+		position: absolute
+		top: 50%
+
+	&_details &_button 
+		box-sizing: border-box
+		margin: 10px 0
+
+		width: 100%
+		height: 45px
+		line-height: 45px		
+		text-align: center
+
+		border: 1px solid black
+
+		color: black
+		font-family: "Myriad Pro"
+		font-size: 18px
+		font-weight: 700
+		text-transform: uppercase
+		letter-spacing: -0.45px
+		
+		&.style_triangle::after
+			@include triangle(5px, black)
+			top: 13px
+			left: calc(100% - 13px)
+
+	&_details &_dots
+		display: flex
+		justify-content: space-between
+		width: 40%
+		height: 15px
+		
+	&_dot
+		width: 13px
+		height: 13px
+
+		border: 1px solid #ffffff
+		border-radius: 50%
+		background-color: #a59966
+
+		&#{&}__visible
+			background-color: red
+
+
+		
+
+
+	
+
+
+
+
+
+
+		
+		

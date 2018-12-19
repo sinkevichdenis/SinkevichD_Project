@@ -1,31 +1,36 @@
-mixin menuLink(name, adress)
-	a(href= adress).header_link= name
+mixin header_create()
 
-mixin menuIcon(name, adress)
-	a(href= adress).header_icon
-		img(src= "/assets/icon_" + name + ".png")
+	mixin menuLink(name, adress)
+		a(href= adress).header_link= name
 
-.header
-	.header_container-logo
-		.header_search
-			input(placeholder= "Search and hit enter")
-			+menuIcon("search","#")
-		.header_logo
-			img(src="/assets/logo_mountain.png")
-		.header_subscribe
-			span subscribe
-	.header_line
-	.header_container-menu
-		.header_menu-links
-			+menuLink("home", "#")
-			+menuLink("featured", "#")
-			+menuLink("BLOGS", "#")
-			+menuLink("GALLERY", "#")
-			+menuLink("categories", "#")
-			+menuLink("contact", "#")
-		.header_menu-icons
-			+menuIcon("facebook","#")
-			+menuIcon("google","#")
-			+menuIcon("twitter","#")
-			+menuIcon("instagram","#")
-			+menuIcon("youtube","#")
+	mixin menuIcon(name, adress)
+		a(href= adress).header_icon
+			img(src= "/assets/icon_" + name + ".png")
+
+	.header
+		.header_container
+			.header_container-logo
+				.header_search
+					input(placeholder= "Search and hit enter")
+					+menuIcon("search","#")
+				.header_logo
+					img(src="/assets/logo_mountain.png")
+				.header_subscribe
+					span subscribe
+			.header_line
+			.header_container-menu
+				.header_menu-links
+					+menuLink("home", "#")
+					+menuLink("featured", "#")
+					+menuLink("BLOGS", "#")
+					+menuLink("GALLERY", "#")
+					+menuLink("categories", "#")
+					+menuLink("contact", "#")
+				.header_menu-icons
+					+menuIcon("facebook","#")
+					+menuIcon("google","#")
+					+menuIcon("twitter","#")
+					+menuIcon("instagram","#")
+					+menuIcon("youtube","#")
+		.header_sliderTop.sliderTop
+			+sliderTop_create()
