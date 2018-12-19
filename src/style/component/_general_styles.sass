@@ -1,0 +1,35 @@
+.style
+	&_shadow
+		box-shadow: $shadowBlocks
+
+	&_button__yellow
+		background-color: $backColorYellow
+		transition: .2s
+		&:hover
+			cursor: pointer
+			box-shadow: 2px 2px 10px gray,  -2px -2px 10px gray
+		&:active
+			background-color: lighten($colorFontMain, 60%) 
+
+	&_triangle
+		//use it with mixin to create triangle label 
+
+	&_layers
+		position: relative
+	&_layers &_layer
+		position: absolute
+		display: block
+		opacity: 0
+		transition: opacity .8s
+	&_layers &_layer__visible
+		display: block
+		opacity: 1
+		transition: opacity .8s
+
+	&_inverse-y
+		transform: scale(-1, 1)
+	&_inverse-x
+		transform: scale(1, -1)
+	&_line
+		border: 3px solid lighten($colorFontMain, 75%)
+
