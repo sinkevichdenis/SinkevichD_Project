@@ -44,8 +44,8 @@ mixin sliderTop_create()
 		.sliderTop_container
 			.sliderTop_container-title.sliderTop_title-down= headerTxtJson.contentTitle
 			.sliderTop_buttons
-				.sliderTop_button
-				.sliderTop_button.style_inverse-x
+				.sliderTop_button.go-up
+				.sliderTop_button.go-down.style_inverse-x
 			.sliderTop_layers.style_layers
 				+slideText(headerTxtJson.content)
 				.sliderTop_details
@@ -53,8 +53,3 @@ mixin sliderTop_create()
 						|explore now
 					.sliderTop_dots
 						+slideDots(3)
-
-
-	script(src="/js/component/_sliderTop.js")
-
-
