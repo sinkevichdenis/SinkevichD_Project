@@ -28,7 +28,7 @@
 			height: 50px
 			line-height: 50px
 
-			text-indent: 35%
+			text-align: center
 
 			border: none
 			border-bottom: 3px solid lighten($colorFontMain, 60%)
@@ -39,11 +39,12 @@
 			&:hover
 				border: none
 				border-bottom: 3px solid $colorFontFocus
+				
 				&::-webkit-input-placeholder
 					color: $colorFontFocus
-				:-moz-placeholder
+				&::-moz-placeholder
 					color: $colorFontFocus
-				:-ms-input-placeholder
+				&::-ms-input-placeholder
 					color: $colorFontFocus
 				
 	&_row.input-checkbox > label
