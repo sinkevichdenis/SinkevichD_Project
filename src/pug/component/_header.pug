@@ -3,8 +3,8 @@ mixin header_create()
 	mixin menuLink(name, adress)
 		a(href= adress).header_link= name
 
-	mixin menuIcon(name, adress)
-		a(href= adress).header_icon
+	mixin menuIcon(className, name, adress)
+		a(href= adress)(class= className)
 			img(src= "/assets/icon_" + name + ".png")
 
 	.header
@@ -27,10 +27,10 @@ mixin header_create()
 					+menuLink("categories", "#")
 					+menuLink("contact", "#")
 				.header_menu-icons
-					+menuIcon("facebook","#")
-					+menuIcon("google","#")
-					+menuIcon("twitter","#")
-					+menuIcon("instagram","#")
-					+menuIcon("youtube","#")
+					+menuIcon("header_icon","facebook","#")
+					+menuIcon("header_icon","google","#")
+					+menuIcon("header_icon","twitter","#")
+					+menuIcon("header_icon","instagram","#")
+					+menuIcon("header_icon","youtube","#")
 		.header_sliderTop.sliderTop
 			+sliderTop_create()
