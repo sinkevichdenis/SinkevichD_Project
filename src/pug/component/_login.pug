@@ -1,0 +1,19 @@
+mixin login_create()
+	
+	.login.style-shadow
+		.login_title(data-href= "login_title") Subscribe
+		.login_line.style_line
+		.login_form
+			.login_row.input-row
+				input(id= "input_name" 
+					type= "text" placeholder= "My name...")
+			.login_row.input-row
+				input(id= "input_email" 
+					type= "email" placeholder= "My email...")
+			.login_row.input-checkbox
+				label I want to receive fresh news
+					input(id= "input_check" 
+					type= "checkbox")
+					.checkbox-point
+			.login_row.input-button
+				.login_button sign up
