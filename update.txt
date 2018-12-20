@@ -1,3 +1,7 @@
+version 1.2.0
+
+* add readJson function. The function load file for each
+	change in './data/*.json'
 
 ==========================================================
 version 1.1.0
