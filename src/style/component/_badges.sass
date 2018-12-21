@@ -13,6 +13,7 @@
 
 .badges
 	width: 95%
+	min-width: 1200px
 	height: 450px
 
 	display: flex
@@ -20,40 +21,116 @@
 	justify-content: space-around
 	position: relative
 	
-	margin: 30px 15px 60px 15px
+	margin: 30px 15px 80px 15px 
 
 	background-color: $backColorBlocks
 
 	&_container
-		width: 40%
-		height: 450px
-		line-height: 600px
+		width: 45%
+		min-width: 500px
+		height: 100%
+
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		padding: 30px
+
 		position: relative
 		order: 5
 
-		z-index: 5
-		background-color: green
+	&_title, &_subtitle, &_content, &_form
+		display: block
+		box-sizing: border-box
 
-	& &_reverse
+	&_title
+		color: $colorFontFocus
+		font-family: "Myriad-Pro"
+		font-size: 30px
+		text-transform: uppercase
 
+	&_subtitle
+		color: $colorFontMain
+		font-family: "Open Sans"
+		font-size: 24px
+		font-weight: 700
+		letter-spacing: 4.8px
 
+		border-style: none none solid
+		padding: 10px 0
+		margin: 15px 0
+
+	&_content
+		color: lighten($colorFontMain, 30%)
+		font-family: "Arial"
+		font-size: 20px
+		line-height: 35px
+
+	&_form
+		width: 100%
+		height: 45px
+
+		display: flex
+		justify-content: space-between
+		margin-top: 70px
+
+	&_button, &_links
+		width: 150px
+		height: 100%
+		line-height: 45px
+
+		display: block
+		text-align: center
+
+		font-family: "Dosis-SemiBold"
+		font-size: 23px
+		font-weight: bold
+		font-stretch: extra-condensed
+		letter-spacing: 3px
+		text-transform: uppercase
+
+	&_links
+		width: 200px
+
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+		color: lighten($colorFontMain, 30%)
+		
+	&_icon
+		width: 40px
+		height: 40px
+		line-height: 35px
+
+		img 
+			width: 20px
+			height: 20px
+
+		&:hover
+			border: 1px solid $colorFontFocus
+	
 	&_usual &_image
 		order: 7
-		&::after
-			@include pseudoElementCreate()
-			left: -20px
-			background-image: url("/assets/badge_1.png")
-
-	&_usual &_container
-	
-	
-
 	&_reverse &_image
 		order: 1
+
+	&_usual &_image_0
+		&::after
+			@include pseudoElementCreate()
+			background-image: url("/assets/badge_0.png")
+
+	&_reverse &_image_1
 		&::before
 			@include pseudoElementCreate()
-			left: 20px
+			background-image: url("/assets/badge_1.png")
+
+	&_usual &_image_2
+		&::after
+			@include pseudoElementCreate()
 			background-image: url("/assets/badge_2.png")
 
-	&_reverse &_container
-
+	&_reverse &_image_3
+		&::before
+			@include pseudoElementCreate()
+			background-image: url("/assets/badge_3.png")
+	

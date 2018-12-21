@@ -1,17 +1,32 @@
-mixin badges_create(reverse)
-	
-	mixin badges_content_create(json,number)
-			for path,index in json
-				if (index == number)
-					.badges_title= path.title
-					.badges_subtitle= path.subtitle
-					.badges_line
-					.badges_content= path.content
+mixin badges_create()
 
-	.badges.style_shadow(class= reverse)
-		.badges_container
-			+badges_content_create(badgeTxtJson.content,0)
-			.badges_form
-				.badges_button
-				.badges_links
-		.badges_image
+	mixin badges_content_create(json,number)
+		if (number % 2 == 0)
+			.badges.badges_usual.style_shadow
+				+badges_text_create(json,number)
+		else
+			.badges.badges_reverse.style_shadow
+				+badges_text_create(json,number)
+
+
+	mixin badges_text_create(json,number)
+		for path,index in json
+			if (index == number)
+				.badges_container
+					.badges_title
+						span= path.title
+					.style_line.badges_subtitle= path.subtitle
+					.badges_content= path.content
+					.badges_form
+						.badges_button.style_button__yellow readmore
+						.badges_links share
+							+menuIcon("badges_icon","facebook","#")
+							+menuIcon("badges_icon","twitter","#")
+							+menuIcon("badges_icon","instagram","#")
+				.badges_image(class= "badges_image_" + number)
+	
+	
+	+badges_content_create(badgeTxtJson.content, 0)
+	+badges_content_create(badgeTxtJson.content, 1)
+	+badges_content_create(badgeTxtJson.content, 2)
+	+badges_content_create(badgeTxtJson.content, 3)
