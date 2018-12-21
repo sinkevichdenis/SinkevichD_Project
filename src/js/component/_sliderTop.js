@@ -68,27 +68,28 @@
 	// change text and dots on slides
 	function changeText()
 	{	
+		switch (indexImage)
+		{
+			case 1:
+				arrayDot[0].classList.toggle(classDot);
+				arrayDot[1].classList.toggle(classDot);
+				arrayLayer[0].classList.toggle(classLayer);
+				arrayLayer[1].classList.toggle(classLayer);
+				break;
 
-		if (indexImage === 1)
-		{
-			arrayDot[0].classList.toggle(classDot);
-			arrayDot[1].classList.toggle(classDot);
-			arrayLayer[0].classList.toggle(classLayer);
-			arrayLayer[1].classList.toggle(classLayer);
-		}
-		if (indexImage === 2)
-		{
-			arrayDot[1].classList.toggle(classDot);
-			arrayDot[2].classList.toggle(classDot);
-			arrayLayer[1].classList.toggle(classLayer);
-			arrayLayer[2].classList.toggle(classLayer);
-		}
-		if (indexImage === 3)
-		{
-			arrayDot[2].classList.toggle(classDot);
-			arrayDot[0].classList.toggle(classDot);
-			arrayLayer[2].classList.toggle(classLayer);
-			arrayLayer[0].classList.toggle(classLayer);
+			case 2:
+				arrayDot[1].classList.toggle(classDot);
+				arrayDot[2].classList.toggle(classDot);
+				arrayLayer[1].classList.toggle(classLayer);
+				arrayLayer[2].classList.toggle(classLayer);
+				break;
+
+			case 3:
+				arrayDot[2].classList.toggle(classDot);
+				arrayDot[0].classList.toggle(classDot);
+				arrayLayer[2].classList.toggle(classLayer);
+				arrayLayer[0].classList.toggle(classLayer);
+				break;
 		}
 	}
 

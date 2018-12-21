@@ -1,5 +1,5 @@
 /**
- * version 1.1.0
+ * version 1.2.0
  */
 var gulp = require('gulp'),
     gulpIf = require('gulp-if'),
@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     del = require('del'),
     config = require('./utils/config'),
+    fs = require('fs'),
     resourceRoutes = require('./utils/resourceRoutes'),
     browserSync = require('browser-sync'),
     browserInstance;
@@ -84,7 +85,7 @@ gulp.task('dev', gulp.series('clien:temp', 'dev:comppile', 'browser:run:temp', f
 function compilePug(dest, option) {
     option = option || {};
 
-    option.data = require(config.data)
+    option.data = readJson(config.data);
 
     return gulp.src(config.src.pug)
         .pipe(pug(option))
@@ -95,4 +96,8 @@ function compileSass(from, to) {
     return gulp.src(from)
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest(to));
+}
+
+function readJson(path) {
+    return JSON.parse(fs.readFileSync(path))
 }

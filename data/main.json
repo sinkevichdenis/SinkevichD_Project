@@ -33,6 +33,17 @@
 				"title":"DAY LIFE",
 				"subtitle": "Only forests and fields, Go away from my road",
 				"content": "A high degree of autonomy is particularly in forests and meadows..."
-			}]
+			},
+			{
+				"title":"trekking",
+				"subtitle": "Written in the stars, Million miles away",
+				"content": "A high degree of autonomy is particularly desirable in fields such as space exploration..."
+			},
+			{
+				"title":"doing something",
+				"subtitle": "Only forests and fields, Go away from my road",
+				"content": "A high degree of autonomy is particularly in forests and meadows..."
+			}
+		]
 	}
 }

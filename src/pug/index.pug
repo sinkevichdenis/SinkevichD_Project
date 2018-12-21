@@ -5,6 +5,7 @@ include ./component/_sidebar.pug
 include ./component/_map.pug
 include ./component/_login.pug
 include ./component/_about.pug
+include ./component/_badges.pug
 
 
 block body
@@ -12,4 +13,6 @@ block body
 	.main
 		+sidebar_create()
 		.content
+			+badges_create()
+
 	.footer
