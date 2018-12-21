@@ -1,0 +1,17 @@
+mixin badges_create(reverse)
+	
+	mixin badges_content_create(json,number)
+			for path,index in json
+				if (index == number)
+					.badges_title= path.title
+					.badges_subtitle= path.subtitle
+					.badges_line
+					.badges_content= path.content
+
+	.badges.style_shadow(class= reverse)
+		.badges_container
+			+badges_content_create(badgeTxtJson.content,0)
+			.badges_form
+				.badges_button
+				.badges_links
+		.badges_image

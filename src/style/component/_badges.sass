@@ -1,0 +1,59 @@
+@mixin pseudoElementCreate()
+	content: ""
+	display: block
+
+	width: 570px
+	height: 600px
+
+	position: relative
+	top: 10px
+
+	box-shadow: $shadowBlocks
+	z-index: 10
+
+.badges
+	width: 95%
+	height: 450px
+
+	display: flex
+	align-items: center
+	justify-content: space-around
+	position: relative
+	
+	margin: 30px 15px 60px 15px
+
+	background-color: $backColorBlocks
+
+	&_container
+		width: 40%
+		height: 450px
+		line-height: 600px
+		position: relative
+		order: 5
+
+		z-index: 5
+		background-color: green
+
+	& &_reverse
+
+
+	&_usual &_image
+		order: 7
+		&::after
+			@include pseudoElementCreate()
+			left: -20px
+			background-image: url("/assets/badge_1.png")
+
+	&_usual &_container
+	
+	
+
+	&_reverse &_image
+		order: 1
+		&::before
+			@include pseudoElementCreate()
+			left: 20px
+			background-image: url("/assets/badge_2.png")
+
+	&_reverse &_container
+
