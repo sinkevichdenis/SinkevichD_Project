@@ -1,18 +1,10 @@
 mixin fixMenu_create()
-
-	//- mixin createA(items)
-	//- 	for item, index in items
-	//- 			a.fixMenu_link(href= "#") #{item}
-
-	//- ul.fixMenu
-	//- 	li.fixMenu_button 
-	//- 		+createA(["home","blogs","gallery","categories","contact"])
+	
+	mixin createLinks(items)
+		for item, index in items
+				a.fixMenu_link(href="" + "#" 
+						class=(index === 0 ? "fixMenu_title" : "")) #{item}
 
 	ul.fixMenu
 		li.fixMenu_size
-			a(href= "#").fixMenu_link.fixMenu_title_link home
-			a(href= "#").fixMenu_link blogs
-			a(href= "#").fixMenu_link gallery
-			a(href= "#").fixMenu_link categories
-			a(href= "#").fixMenu_link contact
-
+			+createLinks(["home","blogs","gallery","categories","contact"])
