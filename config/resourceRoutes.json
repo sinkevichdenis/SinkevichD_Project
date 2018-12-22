@@ -12,6 +12,18 @@
         "to": "/libs/jquery/jquery.js"
     },
     {
+        "from": "./node_modules/slick-carousel/slick/slick.js",
+        "to": "/libs/slick/slick.js"
+    },
+    {
+        "from": "./node_modules/slick-carousel/slick/slick-theme.css",
+        "to": "/libs/slick/slick-theme.css"
+    },
+    {
+        "from": "./node_modules/slick-carousel/slick/slick.css",
+        "to": "/libs/slick/slick.css"
+    },
+    {
         "from": "./src/assets/",
         "to": "/assets"
     },
