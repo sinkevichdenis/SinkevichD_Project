@@ -1,5 +1,7 @@
 //var to all page
 $widthBody: 1900px
+$minWidth: 1100px
+$constMedia: 1900px
 $backImageImage: "/assets/page_backgroud2.png"
 $shadowBlocks: 0 14px 26px 3px rgba(0, 0, 0, 0.24)
 $backColorYellow: #ffc908
@@ -21,20 +23,19 @@ $marginHeader: 0 20px
 //var to SliderTop
 $maxHeightSlider: 900px
 $minHeightSlider: 470px
-$maxWidthSlider: 1900px
-$minWidthSlider: 1000px
 
 body
-	padding: 0
-	margin: 0
-
-	display: flex
-	justify-content: center
-	
 	background-image: url($backImageImage)
 
 	.#{&}_container
+		margin-right: auto
+		margin-left: auto
+		display: flex
+		flex-wrap: wrap
+		
 		max-width: $widthBody
+		min-width: $minWidth
+		width: 100%
 		
 		box-shadow: 0 0 20px rgba(0,0,0,0.7)
 		background-color: $backColorBlocks
@@ -44,24 +45,20 @@ a
 
 .main
 	display: flex
-	height: calc(100% - 1520px)
+	width: 100%
+	height: calc(100% - 2020px)
 
 .content
 	width: calc(100% - 50px)
-	height: 2270px
+	height: 100%
 
 	display: flex
 	flex-direction: column
 	align-items: center
+	transition: width .3s
 
 	&_screen
-		width: 75%
-
-.footer
-	width: 100%
-	height: 300px
-	background-color: red
-
+		width: 65%
 
 
 @mixin triangle($size, $color)

@@ -1,12 +1,13 @@
 mixin sliderTop_create()
 
-	mixin slideImage(number)
+	mixin slideImage(name,number,place)
 		- var numbers = 1
 		while numbers <= number
-			img(src="/assets/slider_" + numbers + 
+			img(src="/assets/" + name + "_" + numbers + 
 				".png").sliderTop_image
 			- numbers++
-		img(src="/assets/slider_1.png").sliderTop_image
+		if (place == "top")
+			img(src="/assets/slider_1.png").sliderTop_image
 
 	mixin slideTitle(title, content)
 		.sliderTop_title-top= title
@@ -35,7 +36,7 @@ mixin sliderTop_create()
 
 
 	.sliderTop_images
-		+slideImage(3)
+		+slideImage("slider",3,"top")
 		.sliderTop_shadow
 	.sliderTop_not-image-components
 		.sliderTop_title
