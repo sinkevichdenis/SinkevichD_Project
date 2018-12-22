@@ -1,7 +1,7 @@
 (function (){
 	$(document).ready(function()
 	{
-		$('.sliderBottom').slick(
+		$(".sliderBottom").slick(
 		{
 			slidesToShow: 4,
 			slidesToScroll: 1,

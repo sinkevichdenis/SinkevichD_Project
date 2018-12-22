@@ -1,4 +1,11 @@
 mixin footer_create()
 	
-	.footer
+	.footer.style_line
 		+sliderBottom_create()
+		.footer_links.header_menu-links
+			+menuLink("home", "#")
+			+menuLink("featured", "#")
+			+menuLink("BLOGS", "#")
+			+menuLink("GALLERY", "#")
+			+menuLink("categories", "#")
+			+menuLink("contact", "#")
