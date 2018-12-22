@@ -1,15 +1,15 @@
 mixin badges_create()
 
-	mixin badges_content_create(json,number)
+	mixin badgeContent(json,number)
 		if (number % 2 == 0)
 			.badges.badges_usual.style_shadow
-				+badges_text_create(json,number)
+				+badgeText(json,number)
 		else
 			.badges.badges_reverse.style_shadow
-				+badges_text_create(json,number)
+				+badgeText(json,number)
 
 
-	mixin badges_text_create(json,number)
+	mixin badgeText(json,number)
 		for path,index in json
 			if (index == number)
 				.badges_container
@@ -26,7 +26,7 @@ mixin badges_create()
 				.badges_image(class= "badges_image_" + number)
 	
 	
-	+badges_content_create(badgeTxtJson.content, 0)
-	+badges_content_create(badgeTxtJson.content, 1)
-	+badges_content_create(badgeTxtJson.content, 2)
-	+badges_content_create(badgeTxtJson.content, 3)
+	+badgeContent(badgeTxtJson.content, 0)
+	+badgeContent(badgeTxtJson.content, 1)
+	+badgeContent(badgeTxtJson.content, 2)
+	+badgeContent(badgeTxtJson.content, 3)

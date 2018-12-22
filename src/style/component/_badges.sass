@@ -11,9 +11,15 @@
 	box-shadow: $shadowBlocks
 	z-index: 10
 
+	background-position: center center 
+
+	@media (max-width: $constMedia)
+		width: 440px
+		height: 550px
+		top: 0
+
 .badges
 	width: 95%
-	min-width: 1200px
 	height: 450px
 
 	display: flex
@@ -26,8 +32,8 @@
 	background-color: $backColorBlocks
 
 	&_container
-		width: 45%
-		min-width: 500px
+		width: 95%
+		min-width: 250px
 		height: 100%
 
 		display: flex
@@ -37,6 +43,7 @@
 
 		position: relative
 		order: 5
+
 
 	&_title, &_subtitle, &_content, &_form
 		display: block
@@ -49,6 +56,9 @@
 		text-transform: uppercase
 
 	&_subtitle
+		width: 100%
+		height: 25%
+
 		color: $colorFontMain
 		font-family: "Open Sans"
 		font-size: 24px
@@ -60,10 +70,13 @@
 		margin: 15px 0
 
 	&_content
+		width: 100%
+		height: 25%
+		line-height: 35px
+		
 		color: lighten($colorFontMain, 30%)
 		font-family: "Arial"
 		font-size: 20px
-		line-height: 35px
 
 	&_form
 		width: 100%
@@ -71,11 +84,13 @@
 
 		display: flex
 		justify-content: space-between
+		flex-wrap: wrap
+
 		margin-top: 70px
 
 	&_button, &_links
 		width: 150px
-		height: 100%
+		height: 45px
 		line-height: 45px
 
 		display: block
@@ -118,7 +133,6 @@
 		&::after
 			@include pseudoElementCreate()
 			background-image: url("/assets/badge_0.png")
-
 	&_reverse &_image_1
 		&::before
 			@include pseudoElementCreate()
@@ -133,4 +147,24 @@
 		&::before
 			@include pseudoElementCreate()
 			background-image: url("/assets/badge_3.png")
+
+
+
+@media (max-width: $constMedia)
+
+	.badges
+		height: 550px
+		margin: 15px 5px
+
+		&_subtitle, &_content
+			height: 40%
+
+		&_form
+			justify-content: space-around
+			margin-bottom: 15px
+			margin-top: 0
+		
+
+
+
 	

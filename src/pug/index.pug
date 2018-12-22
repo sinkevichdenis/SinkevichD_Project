@@ -6,6 +6,8 @@ include ./component/_map.pug
 include ./component/_login.pug
 include ./component/_about.pug
 include ./component/_badges.pug
+include ./component/_sliderBottom.pug
+include ./component/_footer.pug
 
 
 block body
@@ -14,5 +16,4 @@ block body
 		+sidebar_create()
 		.content
 			+badges_create()
-
-	.footer
+	+footer_create()
